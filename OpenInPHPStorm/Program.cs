@@ -128,8 +128,8 @@ namespace OpenInPHPStorm
                     if (process.ProcessName.Contains("phpstorm64"))
                     {
                         string StormExcecutable = process.MainModule.FileName;
-                        Debug.WriteLine(process.Handle);
-                        Process.Start(String.IsNullOrEmpty(path) ? StormExcecutable : path, String.Format("--line {0} {1}", matches[3], matches[2]));
+                        Console.WriteLine(process.Handle);
+                        Process.Start(String.IsNullOrEmpty(path) ? StormExcecutable : path, String.Format("--line {0} {1}", matches[3], filePath));
                         ShowWindow(process.Handle, WindowShowStyle.ShowNormalNoActivate);
 
                         PostMessage(process.Handle, 0x0112, 0x0112, 0);
